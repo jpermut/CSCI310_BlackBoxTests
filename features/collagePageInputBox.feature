@@ -9,6 +9,12 @@ Scenario: collage page input box prompt text disappears
 	When I type "p" in the search box
 	Then I should see only "p" in the search box
 
+Scenario: pressing enter in input box triggers collage build process
+
+	When I type "puppy" in the search box
+	And press enter
+	Then I should see a collage of "puppy" images
+
 Scenario: Input box should be underneath collage and to the left of the "Build Another Collage" button
 
 	When I am on the collage page
