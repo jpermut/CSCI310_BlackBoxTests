@@ -10,7 +10,7 @@ When(/^I enter "([^"]*)" in the search box$/) do |searchArg|
   fill_in(EnterTopicField, :with => searchArg)
 end
 
-When(/^press "([^"]*)"$/) do |collagePageButtonName|
+When(/^I press the "([^"]*)" button$/) do |collagePageButtonName|
   click_button(collagePageButtonName)
 end
 
