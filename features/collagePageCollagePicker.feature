@@ -16,4 +16,8 @@ Scenario: the collage gallery doesn't show the collage image currently in the ma
 	And I press the "Build Another Collage" button
 	Then I should not see the collage of "puppy" images in the gallery
 
-Scenario: 
+Scenario: clicking on collage in gallery triggers display
+	When I enter "puppy" in the search box
+	And I press the "Build Another Collage" button
+	And I press the "ambulance" collage from the gallery
+	Then I should see a collage of "ambulance" images in the main collage space
