@@ -1,4 +1,4 @@
-EnterTopicField = "Enter topic"
+
 
 When(/^I type "([^"]*)" in the search box$/) do |searchArg|
   fill_in(EnterTopicField, :with => searchArg)

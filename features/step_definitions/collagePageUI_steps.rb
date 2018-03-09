@@ -1,31 +1,48 @@
-Given(/^I am on the collage page2$/) do 
-  visit "http://localhost:8080/myCollageGenerator/SearchPage.jsp"
-  fill_in('Enter topic', :with => 'puppy')
-  find_field("Enter topic").native.send_key(:enter)
+CollagePageColor = "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+TitleTextColor = "rgba(0, 0, 0, 1)"
+TitleTextSize = ("24px")
+TitleText = ("Collage for topic ambulance")
+TitleExpectation = 'Collage for topic ambulance'
+
+Then(/^the collage page background color should be "([^"]*)"$/) do |arg1|
+  	arg1 = CollagePageColor
+	color = find('body').native.css_value('background')
+	expect(color).to eq(arg1)
 end
 
-Then(/^I should see the page in white$/) do |arg1|
-  expect(page).to have_css("body[background-color*='white']")
+Then(/^title should be on top of the page$/) do
+        titlePos = page.driver.evaluate_script <<-EOS
+  		function() {
+    			var ele  = document.getElementById('Title');
+    			var rect = ele.getBoundingClientRect();
+    			return [rect.left, rect.top];
+  		}();
+	EOS
+	collagePos = page.driver.evaluate_script <<-EOS
+  		function() {
+    			var ele  = document.getElementById('CollageImageContainer');
+    			var rect = ele.getBoundingClientRect();
+    			return [rect.left, rect.top];
+  		}();
+	EOS
+	expect(titlePos[1] < collagePos[1]).to be(true)
 end
 
-When(/^I am on the collage page$/) do
-  visit "http://localhost:8080/myCollageGenerator/SearchPage.jsp"
-  fill_in('Enter topic', :with => 'puppy')
-  find_field("Enter topic").native.send_key(:enter)
+Then(/^the page title text color is "([^"]*)"$/) do |arg1|
+    	arg1 = TitleTextColor
+	color = find_by_id('Title').native.css_value('color')
+	expect(color).to eq(arg1)
 end
 
-Then(/^I should see the title on top of the page$/) do 
-  expect(page).to have_css("		")	// FILL IN PLS		
+Then(/^the title size is "([^"]*)"$/) do |arg1|
+    	arg1 = TitleTextSize
+	size = find_by_id('Title').native.css_value('font-size')
+	expect(size).to eq(arg1)
 end
 
-When(/^I am on the collage page$/) do
-  visit "http://localhost:8080/myCollageGenerator/SearchPage.jsp"
-  fill_in('Enter topic', :with => 'puppy')
-  find_field("Enter topic").native.send_key(:enter)
+Then(/^the title should read "([^"]*)"$/) do |arg1|
+	title = TitleText
+	html = page.evaluate_script("document.getElementById('Title').innerHTML")
+	html.should include(TitleExpectation)
 end
-
-Then(/^I should see the title in black with "Collage for puppy" with size 24$/) do
-  expect(page).to have_css("title[type*='text' color*='black' font-size*='24pt']")	// FILL IN FOR THE WORD PUPPY		
-end
-
 

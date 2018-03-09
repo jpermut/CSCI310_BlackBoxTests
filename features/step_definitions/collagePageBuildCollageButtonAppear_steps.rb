@@ -14,8 +14,5 @@ end
   #expect(page).to have_css("		")		// FILL IN PLS
 #end
 
-Then(/^the button should be static and unresponsive$/)
-  expect(page).to have_css("button[name*='Build Another Collage' disabled]")
-end
 
 

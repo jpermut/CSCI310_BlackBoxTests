@@ -1,6 +1,6 @@
-Then(/^I should see the input box on the left of "Build Another Collage" button$/) do 
-  expect(page).to have_css("		")		// FILL IN PLS
-end
+#Then(/^I should see the input box on the left of "Build Another Collage" button$/) do 
+ # expect(page).to have_css("		")		// FILL IN PLS
+#end
 
 Then(/^I should see the input box in white$/) do
   expect(page).to have_css("input[type*='text' background-color*='white']")		
