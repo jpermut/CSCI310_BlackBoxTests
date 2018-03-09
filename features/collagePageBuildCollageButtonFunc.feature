@@ -16,10 +16,7 @@ Scenario: clicking "Build Another Collage" button doesn't begin collage building
 	And I press the "Build Another Collage" button
 	Then I should see the text "Insufficient number of images found" in the collage space
 	
-Scenario: clicking "Build Another Collage" button disabled when no input
-
-	When I leave the search box empty
-	And press Build Another Collage
-	Then the button should be static and unresponsive
+Scenario: the "Build Another Collage" button disabled when no input
+	Then the "Build Another Collage" button should be unresponsive
 
 

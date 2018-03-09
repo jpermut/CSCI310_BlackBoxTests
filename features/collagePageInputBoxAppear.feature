@@ -9,14 +9,14 @@ Scenario: Input box should be underneath collage and to the left of the "Build A
 
 	Then the box should appear underneath collage and to the left of the "Build Another Collage" button
 
-Scenario: Input box should have dark grey outline
+Scenario: input box has correct outline
+	Then the input box has a "darkgray" outline 
 
-	Then the box should possess a dark grey outline
+Scenario: input box has correct prompt text color
+	Then input box text color is "lightgray" 
 
-Scenario: Input box should be white in color
+Scenario: input box has correct prompt text
+	Then input box has the prompt text "Enter topic"
 
-	Then the box should have a white fill
-
-Scenario: Input box should have white placeholder "Enter topic"
-
-	Then the text inside the button should be in white
+Scenario: input box has correct color
+	Then the input box color is "white"

@@ -21,3 +21,8 @@ end
 Then(/^I should see the text "([^"]*)" in the collage space$/) do |arg2|
   expect(page).to have_css("img[src*='FileHost/insufficientNumberofImagesFound.png']")
 end
+
+Then(/^the "([^"]*)" button should be unresponsive$/) do |buttonName|
+  page.should have_title("Collage Page")
+  expect(page).to have_css("img[src*='FileHost/ambulance/output.png']")
+end

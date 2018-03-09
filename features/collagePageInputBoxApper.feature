@@ -5,13 +5,12 @@ Background:
 	Given I am on the collage page 
 
 
-Scenario: Input box should be underneath collage and to the left of the "Build Another Collage" button
+Scenario: Input box should be in correct position
 
 	Then the box should appear underneath collage and to the left of the "Build Another Collage" button
 
-Scenario: Input box should have dark grey outline
-
-	Then the box should possess a dark grey outline
+Scenario: input box has correct outline
+	Then the input box has a "darkgray" outline 
 
 Scenario: Input box should be white in color
 

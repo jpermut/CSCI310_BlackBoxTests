@@ -4,19 +4,19 @@ Background:
 
 	Given I am on the collage page 
 
-Scenario: "Build Another Collage" should appear underneath collage and slghtly to the right of the center 
+Scenario: "Build Another Collage" is in correct position
 
 	Then the button should appear underneath collage and slightly to the right of the center
 
 
-Scenario: "Build Another Collage" button should display the text "Build Another Collage"
+Scenario: "Build Another Collage" button should display correct text
 
 	Then the text inside the button should be "Build Another Collage"
 
-Scenario: "Build Another Collage" should be dark grey in color
+Scenario: "Build Another Collage" button should be correct color
  
-	Then the button should have a dark grey fill
+	Then the button should be "darkgray"
 
-Scenario: "Build Another Collage" button should have white text
+Scenario: "Build Another Collage" text color should be correct
 
-	Then the text inside the button should be in white
+	Then the button text color should be "white"
